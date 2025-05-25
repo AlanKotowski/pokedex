@@ -1,0 +1,31 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-image: url('/background.jpg');
+}
+
+#pokedex{
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    #leftSide{
+        position: relative;
+        background-color: blue;
+        width: 45%;
+        height: 100%;
+    }
+    #rightSide{
+        position: relative;
+        background-color: green;
+        width: 45%;
+        height: 100%;
+    }
+}
+
