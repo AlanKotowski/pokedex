@@ -20,6 +20,32 @@ body{
         background-color: blue;
         width: 45%;
         height: 100%;
+        #pokeScreen{
+            position: relative;
+            width: 90%;
+            height: 40%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: gray;
+            #photo{
+                position: relative;
+                width: 90%;
+                height: 60%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: white;
+                #pokePhoto{
+                    position: relative;
+                    width: 50%;
+                    height: 100%;
+                    top: 0%;
+                    left: 10%;
+                    background-color: black;
+                }
+            }
+        }
     }
     #rightSide{
         position: relative;

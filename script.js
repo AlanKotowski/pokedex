@@ -1,7 +1,7 @@
 
 const pokefinder = document.getElementById('pokefinder')
 const searchButton = document.getElementById('searchButton')
-const testt = document.querySelector('.test')
+const pokePhoto = document.getElementById('pokePhoto')
 const poke = new Image();
         
 searchButton.addEventListener('click', () => {   

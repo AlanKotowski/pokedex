@@ -22,6 +22,32 @@ body {
   width: 45%;
   height: 100%;
 }
+#pokedex #leftSide #pokeScreen {
+  position: relative;
+  width: 90%;
+  height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: gray;
+}
+#pokedex #leftSide #pokeScreen #photo {
+  position: relative;
+  width: 90%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+#pokedex #leftSide #pokeScreen #photo #pokePhoto {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  top: 0%;
+  left: 10%;
+  background-color: black;
+}
 #pokedex #rightSide {
   position: relative;
   background-color: green;
