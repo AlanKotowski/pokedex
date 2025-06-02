@@ -8,37 +8,45 @@
     <script src="script.js" async></script>
 </head>
 <body>
-    <input type="text" name="pokefinder" id="pokefinder">
-    <button id="searchButton">SEARCH</button>
-
-
     <div id="pokedex">
         <div id="leftSide">
+            <div id="shape">
             <div id="pokeScreen">
                 <div id="photo">
                     <div id="pokePhoto"></div>
                 </div>
-                <button id="previousPokemon">&lt;</button>
-                <div id="pokeNumber"></div>
-                <div id="pokeName"></div>
-                <button id="nextPokemon">&gt;</button>
-                <button id="clear"></button>
+                <div id="pokeInformations">
+                    <button id="previousPokemon">&lt;</button>
+                    <div id="pokeNumber">123</div>
+                    <div id="pokeName">random pokemon</div>
+                    <button id="nextPokemon">&gt;</button>
+                    <button id="clear">X</button>
+                </div>
+                <div id="pokeInputs">
+                    <input type="text" name="pokefinder" id="pokefinder">
+                    <button id="searchButton">SEARCH</button>
+                </div>
             </div>
         </div>
-        <div id="breakingLine"></div>
+        </div>
+        <div id="breakingLine">
+            <div id="breakingLineHolder">
+            </div>
+        </div>
         <div id="rightSide">
             <div id="infoScreen">
-                <div id="pokemonID"></div>
-                <div id="pokemonName"></div>
-                <div id="pokeType"></div>
-                <div id="type"></div>
-                <div id="pokeHeight"></div>
-                <div id="pokemonHeight"></div>
-                <div id="pokeWeight"></div>
-                <div id="pokemonWeight"></div>
+                <div id="pokemonID" class="infoFlex">123</div>
+                <div id="pokemonName" class="infoFlex">random name</div>
+                <div id="pokeAtk" class="infoFlex">Pokemon Attacks</div>
+                <div id="pokeAttacks" class="infoFlex">random</div>
+                <div id="pokeType" class="infoFlex">Pokemon Types</div>
+                <div id="types" class="infoFlex">grass</div>
+                <div id="pokeHeight" class="infoFlex">Height</div>
+                <div id="pokemonHeight" class="infoFlex">12</div>
+                <div id="pokeWeight" class="infoFlex">Weight</div>
+                <div id="pokemonWeight" class="infoFlex">50</div>
             </div>
         </div>
     </div>
-    
 </body>
 </html>

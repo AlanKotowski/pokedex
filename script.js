@@ -2,6 +2,8 @@
 const pokefinder = document.getElementById('pokefinder')
 const searchButton = document.getElementById('searchButton')
 const pokePhoto = document.getElementById('pokePhoto')
+const types = document.getElementById('types')
+const abilities = document.getElementById('pokeAttacks');
 const poke = new Image();
         
 searchButton.addEventListener('click', () => {   
@@ -9,38 +11,68 @@ searchButton.addEventListener('click', () => {
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        abilityTable(data);
-        basicData(data);
-        typeTable(data);
+        console.log(data)
         pokeImage(data);
-        pokeAppearance(data)
+        document.getElementById('pokeName').innerHTML = data.name;
+        document.getElementById('pokemonName').innerHTML = data.name;
+        document.getElementById('pokeNumber').innerHTML = '#' + data.id; 
+        document.getElementById('pokemonID').innerHTML = '#' + data.id;
+        abilityTable(data);
+        typeTable(data);
+        pokeAppearance(data);
+        typeArts(data)
     })
+    .catch(console.log('weird, lol'))
 })
                             
+
 function abilityTable(data){
-    for (let i = 0; i < data.abilities.length; i++){
-        console.log(data.abilities[i].ability.name)
+    if(data.abilities.length == 1){
+     abilities.innerHTML = data.abilities[0].ability.name
+    } else if (data.abilities.length == 2){
+     abilities.innerHTML = data.abilities[0].ability.name + '</br>' + data.abilities[1].ability.name
+    } else if (data.abilities.length == 3){
+     abilities.innerHTML = data.abilities[0].ability.name + '</br>' + data.abilities[1].ability.name + '</br>' + data.abilities[2].ability.name
     }
+ }
+
+
+
+function typeArts(data){
+    if(data.types[0].type.name == 'grass'){
+        types.style.color = 'green'
+        console.log('zielony')
+    } else if(data.types[0].type.name == 'fire'){
+        types.style.color = 'red'
+        console.log('red')
+    }else if(data.types[1].type.name == 'poison'){
+        types.style.color = 'purple'
+        console.log('fiolet')
+    } 
 }
+
+
 function typeTable(data){
-    for (let i = 0; i < data.types.length; i++){
-        console.log(data.types[i].type.name)
+        if(data.types.length == 1){
+            types.innerHTML = data.types[0].type.name
+        } else if (data.types.length == 2){
+            types.innerHTML = data.types[0].type.name + '</br>' + data.types[1].type.name
+        } else if (data.types.length == 3){
+            types.innerHTML = data.types[0].type.name + '</br>' + data.types[1].type.name + '</br>' + data.types[2].type.name
+        }
     }
-}
 
-function pokeImage(data){
-    poke.src = data.sprites.front_default
-    document.body.appendChild(poke)
-}
-
-function basicData(data){
-    console.log(data.id);
-}
 
 function pokeAppearance(data){
-    console.log(data.height + ' inch');
-    console.log(data.weight + ' lbs');
+        document.getElementById('pokemonWeight').innerHTML = data.weight + ' lbs';
+        document.getElementById('pokemonHeight').innerHTML = data.height + ' inch';
+    }
+        
+function pokeImage(data){
+    poke.src = data.sprites.front_default;
+    pokePhoto.appendChild(poke)
+    console.log('test')
 }
-    
-    
-    
+
+
+   
