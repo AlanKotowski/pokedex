@@ -14,25 +14,27 @@ const pokeNumber = document.getElementById('pokeNumber');
 const pokemonId = document.getElementById('pokemonID')
 const pokeHeight = document.getElementById('pokemonWeight')
 const pokeWeight = document.getElementById('pokemonHeight')
-
+const flag = document.querySelector('.flag');
 
 function finder(){
-    let url = `https://pokeapi.co/api/v2/pokemon/` + pokefinder.value;
 
+    url = `https://pokeapi.co/api/v2/pokemon/` + pokefinder.value;
+    
     fetch(url)
     .then(res => res.json())
     .then(data => {
-        console.log(data)
         pokeImage(data);
         pokeName.innerHTML = data.name;
         pokemonName.innerHTML = data.name;
+        flag.innerHTML = data.id;
         pokeNumber.innerHTML = '#' + data.id; 
         pokemonId.innerHTML = '#' + data.id;
         abilityTable(data);
         typeTable(data);
         pokeAppearance(data);
+        pokefinder.value = pokeName.innerHTML
     })
-    .catch(console.log('weird, lol'))
+    .catch(error => console.log(error))
 }
 
 searchButton.addEventListener('click', () => {   
@@ -46,16 +48,18 @@ document.addEventListener('keydown', (e) => {
 })
 
 next.addEventListener('click', () => {
-    pokefinder.value++
+    flag.innerHTML++
+    pokefinder.value = flag.innerHTML;
     finder()
 })
 
 prev.addEventListener('click', () => {
-    if(pokefinder.value <= 1){
+    if(flag.innerHTML <= 1){
         return;
     } else {
-    pokefinder.value--
-    finder()
+        flag.innerHTML--
+        pokefinder.value = flag.innerHTML;
+        finder()
     }
 })
 
@@ -82,7 +86,6 @@ function abilityTable(data){
     }
  }
 
-
  function typeTable(data){
      if(data.types.length == 1){
          types.innerHTML = data.types[0].type.name
@@ -104,4 +107,5 @@ function pokeImage(data){
     }
     
 
+    
     
