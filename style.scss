@@ -18,6 +18,8 @@ body {
   border-radius: 20px;
   display: flex;
   justify-content: space-between;
+
+  //   left panel styles
   #leftSide {
     position: relative;
     background-color: red;
@@ -28,6 +30,8 @@ body {
     box-shadow: 10px 10px 5px -4px rgba(209, 103, 103, 0.75) inset;
     -webkit-box-shadow: 10px 10px 5px -4px rgba(209, 103, 103, 0.75) inset;
     -moz-box-shadow: 10px 10px 5px -4px rgba(209, 103, 103, 0.75) inset;
+
+    // light styles
     #greenLight {
       position: absolute;
       width: 50px;
@@ -70,6 +74,8 @@ body {
         transform: rotate(45deg);
       }
     }
+
+    // left panel shape
     #shape {
       position: relative;
       width: 100%;
@@ -103,6 +109,8 @@ body {
         -webkit-box-shadow: -10px -10px 5px -4px rgba(125, 0, 0, 0.75) inset;
         -moz-box-shadow: -10px -10px 5px -4px rgba(125, 0, 0, 0.75) inset;
       }
+
+      // left panel screen styles (image, info, inputs, buttons)
       #pokeScreen {
         position: relative;
         width: 90%;
@@ -234,6 +242,8 @@ body {
         }
       }
     }
+
+    // decorative speaker
     #speakerBox {
       position: relative;
       width: 60%;
@@ -256,6 +266,7 @@ body {
     }
   }
 
+  //right panel styles
   #rightSide {
     position: relative;
     background-color: black;
@@ -304,6 +315,8 @@ body {
       -webkit-box-shadow: -10px -10px 5px -4px rgba(125, 0, 0, 0.75) inset;
       -moz-box-shadow: -10px -10px 5px -4px rgba(125, 0, 0, 0.75) inset;
     }
+
+    // right panel screen styles
     #infoScreenBorder {
       position: relative;
       background-color: rgb(201, 164, 0);
@@ -368,6 +381,7 @@ body {
   }
 }
 
+//animations
 @keyframes greenSparkle {
   0% {
     background-color: rgb(22, 151, 22);

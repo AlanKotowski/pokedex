@@ -15,6 +15,7 @@ const pokeHeight = document.getElementById("pokemonWeight");
 const pokeWeight = document.getElementById("pokemonHeight");
 const flag = document.querySelector(".flag");
 
+// fetching all data from pokeapi
 function finder() {
   url = `https://pokeapi.co/api/v2/pokemon/` + pokefinder.value;
 
@@ -35,6 +36,8 @@ function finder() {
     .catch((error) => console.log(error));
 }
 
+// buttons event handlers
+// searching pokemon
 searchButton.addEventListener("click", () => {
   finder();
 });
@@ -45,12 +48,14 @@ document.addEventListener("keydown", (e) => {
   }
 });
 
+// display next pokemon
 next.addEventListener("click", () => {
   flag.innerHTML++;
   pokefinder.value = flag.innerHTML;
   finder();
 });
 
+// display previous pokemon
 prev.addEventListener("click", () => {
   if (flag.innerHTML <= 1) {
     return;
@@ -61,6 +66,7 @@ prev.addEventListener("click", () => {
   }
 });
 
+// reset display
 deleteBtn.addEventListener("click", () => {
   flag.innerHTML = 0;
   pokefinder.value = "";
@@ -75,6 +81,7 @@ deleteBtn.addEventListener("click", () => {
   pokeWeight.innerHTML = "-";
 });
 
+// display pokemon's abilities
 function abilityTable(data) {
   if (data.abilities.length == 1) {
     abilities.innerHTML = data.abilities[0].ability.name;
@@ -91,6 +98,7 @@ function abilityTable(data) {
   }
 }
 
+// display pokemon's types
 function typeTable(data) {
   if (data.types.length == 1) {
     types.innerHTML = data.types[0].type.name;
@@ -107,11 +115,13 @@ function typeTable(data) {
   }
 }
 
+// decorative units
 function pokeAppearance(data) {
   pokeHeight.innerHTML = data.weight + " lbs";
   pokeWeight.innerHTML = data.height + " inch";
 }
 
+// display pokemon's image
 function pokeImage(data) {
   poke.src = data.sprites.front_default;
   pokePhoto.appendChild(poke);
