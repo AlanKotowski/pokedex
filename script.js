@@ -42,6 +42,10 @@ searchButton.addEventListener("click", () => {
   finder();
 });
 
+searchButton.addEventListener("touchend", () => {
+  finder();
+});
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
     finder();
@@ -50,6 +54,12 @@ document.addEventListener("keydown", (e) => {
 
 // display next pokemon
 next.addEventListener("click", () => {
+  flag.innerHTML++;
+  pokefinder.value = flag.innerHTML;
+  finder();
+});
+
+next.addEventListener("touchend", () => {
   flag.innerHTML++;
   pokefinder.value = flag.innerHTML;
   finder();
@@ -66,8 +76,32 @@ prev.addEventListener("click", () => {
   }
 });
 
+prev.addEventListener("touchend", () => {
+  if (flag.innerHTML <= 1) {
+    return;
+  } else {
+    flag.innerHTML--;
+    pokefinder.value = flag.innerHTML;
+    finder();
+  }
+});
+
 // reset display
 deleteBtn.addEventListener("click", () => {
+  flag.innerHTML = 0;
+  pokefinder.value = "";
+  poke.src = "";
+  pokeName.innerHTML = "-";
+  pokemonName.innerHTML = "-";
+  pokeNumber.innerHTML = "-";
+  pokemonId.innerHTML = "-";
+  abilities.innerHTML = "-";
+  types.innerHTML = "-";
+  pokeHeight.innerHTML = "-";
+  pokeWeight.innerHTML = "-";
+});
+
+deleteBtn.addEventListener("touchend", () => {
   flag.innerHTML = 0;
   pokefinder.value = "";
   poke.src = "";

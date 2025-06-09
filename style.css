@@ -333,6 +333,40 @@ body {
   border-radius: 0px 0px 10px 0px;
 }
 
+@media only screen and (max-width: 600px) {
+  #pokedex {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    margin-left: 135px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  #pokedex #rightSideRails {
+    position: absolute;
+    top: 120px;
+    left: 8px;
+    width: 286px;
+    height: 600px;
+    border-left: 3px solid black;
+    border-right: 3px solid black;
+    border-radius: 10px 10px 0 0;
+  }
+  #pokedex #rightSide {
+    transform: translate(-103%, 80%);
+    -webkit-clip-path: polygon(123px 40px, 202px 0px, 300px 0px, 298px 694px, 0px 699px, 0px 40px);
+            clip-path: polygon(123px 40px, 202px 0px, 300px 0px, 298px 694px, 0px 699px, 0px 40px);
+    border-radius: 0 0 30px 30px;
+  }
+  #pokedex #rightSide #rightSideBorder {
+    -webkit-clip-path: polygon(123px 40px, 202px 0px, 300px 0px, 298px 694px, 0px 699px, 0px 40px);
+            clip-path: polygon(123px 40px, 202px 0px, 300px 0px, 298px 694px, 0px 699px, 0px 40px);
+    border-radius: 0 0 30px 30px;
+    top: -3px;
+    left: 1px;
+  }
+}
 @keyframes greenSparkle {
   0% {
     background-color: rgb(22, 151, 22);
