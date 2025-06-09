@@ -1,53 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>POKEDEX</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" async></script>
-</head>
-<body>
+  </head>
+  <body>
     <div id="pokedex">
-        <div id="leftSide">
-            <div id="shape">
-            <div id="pokeScreen">
-                <div id="photo">
-                    <div id="pokePhoto"></div>
-                </div>
-                <div id="pokeInformations">
-                    <button id="previousPokemon">&lt;</button>
-                    <div id="pokeNumber">-</div>
-                    <div id="pokeName">-</div>
-                    <button id="nextPokemon">&gt;</button>
-                    <button id="clear">X</button>
-                    <div class="flag"></div>
-                </div>
-                <div id="pokeInputs">
-                    <input type="text" name="pokefinder" id="pokefinder" placeholder="Type pokemon ID or name">
-                    <button id="searchButton">SEARCH</button>
-                </div>
+      <div id="leftSide">
+        <div id="greenLight">
+          <div id="greenLightLight"></div>
+        </div>
+        <div id="blueLight">
+          <div id="blueLightLight"></div>
+        </div>
+        <div id="shape">
+          <div id="shapeBorder"></div>
+          <div id="pokeScreen">
+            <div id="photo">
+              <div id="pokePhoto"></div>
             </div>
-        </div>
-        </div>
-        <div id="breakingLine">
-            <div id="breakingLineHolder">
+            <div id="pokeInformations">
+              <div id="pokeNumber">-</div>
+              <div id="pokeName">-</div>
+              <button id="previousPokemon">&lt;</button>
+              <button id="nextPokemon">&gt;</button>
+              <div class="flag"></div>
             </div>
+            <div id="pokeInputs">
+              <input
+                type="text"
+                name="pokefinder"
+                id="pokefinder"
+                placeholder="Type pokemon ID or name"
+              />
+              <button id="searchButton">SEARCH</button>
+              <button id="clear">CLEAR</button>
+            </div>
+          </div>
         </div>
-        <div id="rightSide">
+        <div id="speakerBox">
+          <div id="speaker"></div>
+        </div>
+      </div>
+      <div id="rightSide">
+        <div id="rightSideBorder">
+          <div id="infoScreenBorder">
             <div id="infoScreen">
-                <div id="pokemonID" class="infoFlex">-</div>
-                <div id="pokemonName" class="infoFlex">-</div>
-                <div id="pokeAtk" class="infoFlex">Pokemon Attacks</div>
-                <div id="pokeAttacks" class="infoFlex">-</div>
-                <div id="pokeType" class="infoFlex">Pokemon Types</div>
-                <div id="types" class="infoFlex">-</div>
-                <div id="pokeHeight" class="infoFlex">Height</div>
-                <div id="pokemonHeight" class="infoFlex">-</div>
-                <div id="pokeWeight" class="infoFlex">Weight</div>
-                <div id="pokemonWeight" class="infoFlex">-</div>
+              <div id="pokemonID" class="infoFlex">-</div>
+              <div id="pokemonName" class="infoFlex">-</div>
+
+              <div id="pokeAtk" class="infoFlex">Pokemon Attacks</div>
+              <div id="pokeAttacks" class="infoFlex">-</div>
+
+              <div id="pokeType" class="infoFlex">Pokemon Types</div>
+              <div id="types" class="infoFlex">-</div>
+
+              <div id="pokeHeight" class="infoFlex">Height</div>
+              <div id="pokemonHeight" class="infoFlex">-</div>
+
+              <div id="pokeWeight" class="infoFlex">Weight</div>
+              <div id="pokemonWeight" class="infoFlex">-</div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
