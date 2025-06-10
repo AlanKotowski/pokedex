@@ -127,7 +127,7 @@ body {
   border: 2px solid black;
 }
 #pokedex #leftSide #shape #pokeScreen #photo #pokePhoto img {
-  scale: 2;
+  scale: 1.8;
 }
 #pokedex #leftSide #shape #pokeScreen #pokeInformations {
   position: relative;
@@ -143,19 +143,18 @@ body {
 }
 #pokedex #leftSide #shape #pokeScreen #pokeInformations #pokeName {
   margin-top: -10px;
-  margin-left: -40px;
-  width: 50%;
+  margin-left: 5px;
+  width: 80%;
   text-align: center;
   font-weight: bold;
   text-transform: capitalize;
-  font-size: 20px;
+  font-size: 16px;
 }
 #pokedex #leftSide #shape #pokeScreen #pokeInformations #pokeNumber {
   font-weight: bold;
   margin-top: -10px;
-  font-size: 20px;
-  margin-left: 0px;
-  font-size: 20px;
+  font-size: 16px;
+  margin-left: 12px;
 }
 #pokedex #leftSide #shape #pokeScreen #pokeInformations #previousPokemon,
 #pokedex #leftSide #shape #pokeScreen #pokeInformations #nextPokemon {
@@ -197,6 +196,48 @@ body {
   left: -120px;
   background-color: rgb(235, 208, 150);
   padding-left: 5px;
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs #autoCompleteList {
+  position: absolute;
+  margin-top: -25px;
+  margin-left: -5px;
+  width: 49%;
+  max-height: 115px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  z-index: 1;
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs .listItem {
+  position: relative;
+  list-style-type: none;
+  padding: 5px;
+  margin: -1px 1px;
+  margin-left: -39px;
+  border: 1px solid gray;
+  font-size: 12px;
+  width: 125%;
+  background-color: rgb(235, 208, 150);
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs .active {
+  cursor: pointer;
+  background-color: rgb(252, 194, 68);
+  box-shadow: 3px 3px 5px 4px rgba(255, 255, 0, 0.75) inset;
+  -webkit-box-shadow: 3px 3px 5px 4px rgba(255, 255, 0, 0.75) inset;
+  -moz-box-shadow: 3px 3px 5px 4px rgba(255, 255, 0, 0.75) inset;
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs ::-webkit-scrollbar {
+  background-color: rgb(235, 208, 150);
+  width: 5px;
+  border: 1px solid gray;
+  border-radius: 50px;
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs ::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background-color: rgb(168, 137, 0);
+}
+#pokedex #leftSide #shape #pokeScreen #pokeInputs ::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(129, 88, 0);
+  cursor: pointer;
 }
 #pokedex #leftSide #shape #pokeScreen #pokeInputs #searchButton {
   position: absolute;

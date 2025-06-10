@@ -14,6 +14,8 @@ const pokemonId = document.getElementById("pokemonID");
 const pokeHeight = document.getElementById("pokemonWeight");
 const pokeWeight = document.getElementById("pokemonHeight");
 const flag = document.querySelector(".flag");
+const list = document.getElementById("autoCompleteList");
+let currentFocus = -1;
 
 // fetching all data from pokeapi
 function finder() {
@@ -148,6 +150,99 @@ function typeTable(data) {
       data.types[2].type.name;
   }
 }
+
+// autocomplete list
+let names = [];
+
+function fetchnames() {
+  fetch("https://pokeapi.co/api/v2/pokemon?limit=1302&offset=0")
+    .then((res) => res.json())
+    .then((data) => {
+      names = data.results.map((pokemon) => pokemon.name);
+    })
+    .catch((error) => console.log(error));
+}
+
+fetchnames();
+
+pokefinder.addEventListener("input", function () {
+  const query = pokefinder.value.toLowerCase();
+  currentFocus = -1;
+  list.innerHTML = "";
+
+  if (query.length === 0) {
+    return;
+  }
+
+  const filteredNames = names.filter((name) =>
+    name.toLowerCase().includes(query)
+  );
+
+  filteredNames.slice(0, 10000).forEach((name) => {
+    const li = document.createElement("li");
+    li.textContent = name;
+    li.classList.add("listItem");
+
+    li.addEventListener("click", () => {
+      pokefinder.value = name;
+      list.innerHTML = "";
+      finder()
+    });
+
+    li.addEventListener('mouseenter', () => {
+        const items = list.querySelectorAll('.listItem');
+        removeActive(items); 
+        li.classList.add('active'); 
+    });
+    
+    list.appendChild(li);
+  });
+});
+
+//disable autocomplete list
+document.addEventListener("click", (event) => {
+  if (event.target !== pokefinder) {
+    list.innerHTML = "";
+  }
+});
+
+// autocomplete list keyboard navigation
+ pokefinder.addEventListener('keydown', function(e) {
+        const items = list.querySelectorAll('.listItem');
+
+        if (items.length === 0) return; 
+
+        if (e.key === 'ArrowDown') {
+            currentFocus++;
+            addActive(items);
+            e.preventDefault(); 
+        } else if (e.key === 'ArrowUp') {
+            currentFocus--;
+            addActive(items);
+            e.preventDefault();
+        } else if (e.key === 'Enter') {
+            e.preventDefault();
+            if (currentFocus > -1 && currentFocus < items.length) {
+                items[currentFocus].click();
+                list.innerHTML = "";
+            }
+        }
+    });
+
+    function addActive(items) {
+        if (!items) return;
+        removeActive(items);
+
+        if (currentFocus >= items.length) currentFocus = 0;
+        if (currentFocus < 0) currentFocus = items.length - 1;
+
+        items[currentFocus].classList.add('active');
+        items[currentFocus].scrollIntoView({ block: 'nearest' });
+    }
+
+    function removeActive(items) {
+        items.forEach(item => item.classList.remove('active'));
+    }
 
 // decorative units
 function pokeAppearance(data) {

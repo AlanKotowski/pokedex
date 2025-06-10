@@ -19,7 +19,7 @@
         </div>
         <div id="shape">
           <div id="shapeBorder"></div>
-          <!-- left panel screen with informations, image and buttons -->
+          <!-- left panel screen with informations, image, buttons and autocomplete list -->
           <div id="pokeScreen">
             <div id="photo">
               <div id="pokePhoto"></div>
@@ -37,7 +37,9 @@
                 name="pokefinder"
                 id="pokefinder"
                 placeholder="Type pokemon ID or name"
+                autocomplete="off"
               />
+              <ul id="autoCompleteList"></ul>
               <button id="searchButton">SEARCH</button>
               <button id="clear">CLEAR</button>
             </div>
