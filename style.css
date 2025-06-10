@@ -335,6 +335,80 @@ body {
   overflow: hidden;
   border: 2px solid black;
 }
+#pokedex #rightSide #infoScreenBorder #infoScreen #types {
+  display: flex;
+  flex-direction: column;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType {
+  width: 66px;
+  padding: 5px 10px;
+  margin: 3px 0;
+  border: 1px solid gray;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11px;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.water {
+  background-color: #6890f0;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.ice {
+  background-color: #98d8d8;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.fire {
+  background-color: #f08030;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.grass {
+  background-color: #78c850;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.electric {
+  background-color: #f8d030;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.psychic {
+  background-color: #f85888;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.dark {
+  background-color: #705848;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.ghost {
+  background-color: #705898;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.dragon {
+  background-color: #7038f8;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.fairy {
+  background-color: #ee99ac;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.fighting {
+  background-color: #c03028;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.flying {
+  background-color: #a890f0;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.ground {
+  background-color: #e0c068;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.poison {
+  background-color: #a040a0;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.bug {
+  background-color: #a8b820;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.rock {
+  background-color: #b8a038;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.steel {
+  background-color: #b8b8d0;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen .pokemonType.normal {
+  background-color: #a8a878;
+}
+#pokedex #rightSide #infoScreenBorder #infoScreen #pokeAttacks {
+  display: flex;
+  flex-direction: column;
+}
 #pokedex #rightSide #infoScreenBorder #infoScreen .infoFlex {
   display: block;
   position: relative;
@@ -358,6 +432,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-bottom: 32px;
+  margin-bottom: -20px;
 }
 #pokedex #rightSide #infoScreenBorder #infoScreen #pokemonID,
 #pokedex #rightSide #infoScreenBorder #infoScreen #pokeAtk,

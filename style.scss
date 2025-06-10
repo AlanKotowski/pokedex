@@ -236,7 +236,7 @@ body {
             width: 125%;
             background-color: rgb(235, 208, 150);
           }
-           .active {
+          .active {
             cursor: pointer;
             background-color: rgb(252, 194, 68);
             box-shadow: 3px 3px 5px 4px rgba(255, 255, 0, 0.75) inset;
@@ -380,6 +380,81 @@ body {
         grid-template-columns: 1fr 1fr;
         overflow: hidden;
         border: 2px solid black;
+        #types {
+          display: flex;
+          flex-direction: column;
+        }
+        .pokemonType {
+          width: 66px;
+          padding: 5px 10px;
+          margin: 3px 0;
+          border: 1px solid gray;
+          border-radius: 8px;
+          color: white;
+          font-weight: bold;
+          text-transform: uppercase;
+          font-size: 11px;
+          text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+            1px 1px 0 #000;
+        }
+        .pokemonType.water {
+          background-color: #6890f0;
+        }
+        .pokemonType.ice {
+          background-color: #98d8d8;
+        }
+        .pokemonType.fire {
+          background-color: #f08030;
+        }
+        .pokemonType.grass {
+          background-color: #78c850;
+        }
+        .pokemonType.electric {
+          background-color: #f8d030;
+        }
+        .pokemonType.psychic {
+          background-color: #f85888;
+        }
+        .pokemonType.dark {
+          background-color: #705848;
+        }
+        .pokemonType.ghost {
+          background-color: #705898;
+        }
+        .pokemonType.dragon {
+          background-color: #7038f8;
+        }
+        .pokemonType.fairy {
+          background-color: #ee99ac;
+        }
+        .pokemonType.fighting {
+          background-color: #c03028;
+        }
+        .pokemonType.flying {
+          background-color: #a890f0;
+        }
+        .pokemonType.ground {
+          background-color: #e0c068;
+        }
+        .pokemonType.poison {
+          background-color: #a040a0;
+        }
+        .pokemonType.bug {
+          background-color: #a8b820;
+        }
+        .pokemonType.rock {
+          background-color: #b8a038;
+        }
+        .pokemonType.steel {
+          background-color: #b8b8d0;
+        }
+        .pokemonType.normal {
+          background-color: #a8a878;
+        }
+        #pokeAttacks {
+          display: flex;
+          flex-direction: column;
+        }
         .infoFlex {
           display: block;
           position: relative;
@@ -403,6 +478,8 @@ body {
           display: flex;
           align-items: center;
           justify-content: center;
+          padding-bottom: 32px;
+          margin-bottom: -20px;
         }
         #pokemonID,
         #pokeAtk,

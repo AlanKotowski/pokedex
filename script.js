@@ -119,42 +119,32 @@ deleteBtn.addEventListener("touchend", () => {
 
 // display pokemon's abilities
 function abilityTable(data) {
-  if (data.abilities.length == 1) {
-    abilities.innerHTML = data.abilities[0].ability.name;
-  } else if (data.abilities.length == 2) {
-    abilities.innerHTML =
-      data.abilities[0].ability.name + "</br>" + data.abilities[1].ability.name;
-  } else if (data.abilities.length == 3) {
-    abilities.innerHTML =
-      data.abilities[0].ability.name +
-      "</br>" +
-      data.abilities[1].ability.name +
-      "</br>" +
-      data.abilities[2].ability.name;
-  }
+  abilities.innerHTML = "";
+
+  data.abilities.forEach((e) => {
+    const div = document.createElement("div");
+    div.className = "pokeAttacks";
+    div.textContent = e.ability.name;
+    abilities.appendChild(div);
+  });
 }
 
 // display pokemon's types
 function typeTable(data) {
-  if (data.types.length == 1) {
-    types.innerHTML = data.types[0].type.name;
-  } else if (data.types.length == 2) {
-    types.innerHTML =
-      data.types[0].type.name + "</br>" + data.types[1].type.name;
-  } else if (data.types.length == 3) {
-    types.innerHTML =
-      data.types[0].type.name +
-      "</br>" +
-      data.types[1].type.name +
-      "</br>" +
-      data.types[2].type.name;
-  }
+  types.innerHTML = "";
+
+  data.types.forEach((e) => {
+    const pokeType = document.createElement("span");
+    pokeType.className = "pokemonType " + e.type.name;
+    pokeType.textContent = e.type.name;
+    types.appendChild(pokeType);
+  });
 }
 
 // autocomplete list
 let names = [];
 
-function fetchnames() {
+function fetchNames() {
   fetch("https://pokeapi.co/api/v2/pokemon?limit=1302&offset=0")
     .then((res) => res.json())
     .then((data) => {
@@ -163,7 +153,7 @@ function fetchnames() {
     .catch((error) => console.log(error));
 }
 
-fetchnames();
+fetchNames();
 
 pokefinder.addEventListener("input", function () {
   const query = pokefinder.value.toLowerCase();
@@ -186,15 +176,15 @@ pokefinder.addEventListener("input", function () {
     li.addEventListener("click", () => {
       pokefinder.value = name;
       list.innerHTML = "";
-      finder()
+      finder();
     });
 
-    li.addEventListener('mouseenter', () => {
-        const items = list.querySelectorAll('.listItem');
-        removeActive(items); 
-        li.classList.add('active'); 
+    li.addEventListener("mouseenter", () => {
+      const items = list.querySelectorAll(".listItem");
+      removeActive(items);
+      li.classList.add("active");
     });
-    
+
     list.appendChild(li);
   });
 });
@@ -207,42 +197,42 @@ document.addEventListener("click", (event) => {
 });
 
 // autocomplete list keyboard navigation
- pokefinder.addEventListener('keydown', function(e) {
-        const items = list.querySelectorAll('.listItem');
+pokefinder.addEventListener("keydown", function (e) {
+  const items = list.querySelectorAll(".listItem");
 
-        if (items.length === 0) return; 
-
-        if (e.key === 'ArrowDown') {
-            currentFocus++;
-            addActive(items);
-            e.preventDefault(); 
-        } else if (e.key === 'ArrowUp') {
-            currentFocus--;
-            addActive(items);
-            e.preventDefault();
-        } else if (e.key === 'Enter') {
-            e.preventDefault();
-            if (currentFocus > -1 && currentFocus < items.length) {
-                items[currentFocus].click();
-                list.innerHTML = "";
-            }
-        }
-    });
-
-    function addActive(items) {
-        if (!items) return;
-        removeActive(items);
-
-        if (currentFocus >= items.length) currentFocus = 0;
-        if (currentFocus < 0) currentFocus = items.length - 1;
-
-        items[currentFocus].classList.add('active');
-        items[currentFocus].scrollIntoView({ block: 'nearest' });
+  if (items.length === 0) {
+    return;
+  } else if (e.key === "ArrowDown") {
+    currentFocus++;
+    addActive(items);
+    e.preventDefault();
+  } else if (e.key === "ArrowUp") {
+    currentFocus--;
+    addActive(items);
+    e.preventDefault();
+  } else if (e.key === "Enter") {
+    e.preventDefault();
+    if (currentFocus > -1 && currentFocus < items.length) {
+      items[currentFocus].click();
+      list.innerHTML = "";
     }
+  }
+});
 
-    function removeActive(items) {
-        items.forEach(item => item.classList.remove('active'));
-    }
+function addActive(items) {
+  if (!items) return;
+  removeActive(items);
+
+  if (currentFocus >= items.length) currentFocus = 0;
+  if (currentFocus < 0) currentFocus = items.length - 1;
+
+  items[currentFocus].classList.add("active");
+  items[currentFocus].scrollIntoView({ block: "nearest" });
+}
+
+function removeActive(items) {
+  items.forEach((item) => item.classList.remove("active"));
+}
 
 // decorative units
 function pokeAppearance(data) {
