@@ -88,6 +88,18 @@ prev.addEventListener("touchend", () => {
   }
 });
 
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowLeft") {
+    flag.innerHTML--;
+    pokefinder.value = flag.innerHTML;
+    finder();
+  } else if (e.key === "ArrowRight") {
+    flag.innerHTML++;
+    pokefinder.value = flag.innerHTML;
+    finder();
+  }
+});
+
 // reset display
 deleteBtn.addEventListener("click", () => {
   flag.innerHTML = 0;
